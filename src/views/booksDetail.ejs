@@ -15,12 +15,14 @@
             <ul>
                 <% dataBooks.forEach(product=> { %>
                     <li>
-                        <h2>
+
+                        <p>
                             <%= product.productTitle %>
-                        </h2>
+                        </p>
                         <p>Description: <%= product.productDescription %>
                         </p>
                         <p>Price: <%= product.productPrice %> บาท</p>
+
                     </li>
                     <% }); %>
             </ul>
