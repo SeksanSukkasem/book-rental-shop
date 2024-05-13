@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Book Rental</title>
     <style>
+        /* Reset CSS */
         * {
             margin: 0;
             padding: 0;
@@ -15,35 +16,31 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f8f9fa;
-            /* สีพื้นหลัง */
-            color: #333;
-            /* สีข้อความ */
-            padding: 20px;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background-color: #343a40;
-            /* สีพื้นหลัง header */
+            background-color: #333;
             color: #fff;
-            /* สีข้อความ header */
-            padding: 20px;
+            padding: 1rem;
             text-align: center;
         }
 
-        h1 {
-            margin-bottom: 20px;
+        header h1 {
+            margin: 0;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
             text-align: center;
         }
 
         nav ul li {
             display: inline;
-            margin-right: 20px;
+            margin-right: 1rem;
         }
 
         nav ul li a {
@@ -52,7 +49,38 @@
         }
 
         main {
-            margin-top: 20px;
+            padding: 2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Book details style */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li p {
+            margin-bottom: 10px;
+        }
+
+        li p:first-child {
+            font-weight: bold;
+        }
+
+        li p:last-child {
+            color: #fdf9f9;
         }
     </style>
 </head>
@@ -62,18 +90,13 @@
         <h1>Online Book Rental Details</h1>
         <nav>
             <ul>
-                <% dataBooks.forEach(product=> { %>
-                    <li>
-
-                        <p>
-                            <%= product.productTitle %>
-                        </p>
-                        <p>Description: <%= product.productDescription %>
-                        </p>
-                        <p>Price: <%= product.productPrice %> บาท</p>
-
-                    </li>
-                    <% }); %>
+                <% dataBooks.forEach(product => { %>
+                <li>
+                    <p><%= product.productTitle %></p>
+                    <p>Description: <%= product.productDescription %></p>
+                    <p>Price: <%= product.productPrice %> บาท</p>
+                </li>
+                <% }); %>
             </ul>
         </nav>
     </header>
