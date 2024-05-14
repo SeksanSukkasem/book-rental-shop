@@ -48,6 +48,7 @@
             text-decoration: none;
         }
 
+
         main {
             padding: 2rem;
         }
@@ -71,6 +72,7 @@
             list-style: none;
             padding: 0;
         }
+
         li p {
             margin-bottom: 10px;
         }
@@ -90,19 +92,27 @@
         <h1>Online Book Rental Details</h1>
         <nav>
             <ul>
-                <% dataBooks.forEach(product => { %>
-                <li>
-                    <p><%= product.productTitle %></p>
-                    <p>Description: <%= product.productDescription %></p>
-                    <p>Price: <%= product.productPrice %> บาท</p>
-                </li>
-                <% }); %>
+                <% dataBooks.forEach(book=> { %>
+                    <li>
+                        <p>
+                            <%= book.productTitle %>
+                        </p>
+                        <p>Description: <%= book.productDescription %>
+                        </p>
+                        <p>Price: <%= book.productPrice %> บาท</p>
+                    </li>
+                    <% }); %>
             </ul>
         </nav>
     </header>
 
     <main>
+        <nav>
+            <ul>
 
+                <button><a href="/addBook">Add Book</a></button>
+            </ul>
+        </nav>
     </main>
 
     <footer>
@@ -113,3 +123,4 @@
 <!-- นี้คือไฟล์ booksDetail.ejs -->
 
 </html>
+
